@@ -301,3 +301,123 @@ function generateECGData(points = 150) {
 
 window.NDATA = NECHIS_DATA;
 window.generateECGData = generateECGData;
+
+// ================================================================
+// PUBLIC ALERTS STORE — shared between Public Portal and Admin/EMT
+// When citizens submit SOS/scene reports they push here.
+// Dashboard notification panel + EMT incoming queue reads from here.
+// ================================================================
+NECHIS_DATA.publicAlerts = [
+  {
+    id: 'PA-001',
+    type: 'Road Traffic Accident',
+    caller: 'Citizen (Anonymous)',
+    location: 'N1 Motorway KM 12, Greater Accra',
+    lat: 5.621, lng: -0.183,
+    description: '2 vehicles collided. 3 visible injured persons.',
+    mediaCount: 2,
+    timestamp: new Date(Date.now() - 3 * 60000).toISOString(),
+    status: 'Dispatched',
+    assignedUnit: 'AMB-GA-001',
+    priority: 'critical',
+  },
+  {
+    id: 'PA-002',
+    type: 'Medical Emergency',
+    caller: 'Kofi Asante (+233 24 511 2233)',
+    location: 'Madina Market, Accra',
+    lat: 5.688, lng: -0.166,
+    description: 'Elderly woman collapsed, unconscious.',
+    mediaCount: 0,
+    timestamp: new Date(Date.now() - 11 * 60000).toISOString(),
+    status: 'En Route',
+    assignedUnit: 'AMB-GA-005',
+    priority: 'critical',
+  },
+  {
+    id: 'PA-003',
+    type: 'Fire / Explosion',
+    caller: 'Citizen (Anonymous)',
+    location: 'Tema Industrial Area, Block 5',
+    lat: 5.671, lng: 0.013,
+    description: 'Factory fire visible from road. 1 video attached.',
+    mediaCount: 1,
+    timestamp: new Date(Date.now() - 22 * 60000).toISOString(),
+    status: 'Contained',
+    assignedUnit: 'FIRE-TEM-02',
+    priority: 'urgent',
+  },
+];
+
+/**
+ * submitPublicAlert(alert) — called by the Public Portal's sendSOS() and
+ * submitSceneReport(). Pushes a new alert into the live store and triggers
+ * a notification in the Dashboard + EMT queue.
+ */
+window.submitPublicAlert = function (alert) {
+  const entry = {
+    id: 'PA-' + String(Date.now()).slice(-4),
+    timestamp: new Date().toISOString(),
+    status: 'New',
+    assignedUnit: null,
+    mediaCount: alert.mediaCount || 0,
+    ...alert,
+  };
+  NECHIS_DATA.publicAlerts.unshift(entry);
+
+  // --- Refresh admin panels if currently visible ---
+  const dashAlerts = document.getElementById('dash-public-alerts');
+  if (dashAlerts) refreshDashPublicAlerts(dashAlerts);
+
+  const emtQueue = document.getElementById('emt-public-queue');
+  if (emtQueue) refreshEMTPublicQueue(emtQueue);
+
+  // --- Ring the global notification bell ---
+  const bell = document.getElementById('notif-count');
+  if (bell) {
+    const cur = parseInt(bell.textContent) || 0;
+    bell.textContent = cur + 1;
+    bell.style.display = 'flex';
+  }
+};
+
+/** Render the public alerts mini-feed for the admin Dashboard. */
+window.refreshDashPublicAlerts = function (container) {
+  const alerts = NECHIS_DATA.publicAlerts.slice(0, 5);
+  container.innerHTML = alerts.map(a => {
+    const ago = Math.round((Date.now() - new Date(a.timestamp)) / 60000);
+    const priColor = a.priority === 'critical' ? 'var(--red)' : a.priority === 'urgent' ? 'var(--amber)' : 'var(--accent)';
+    return `
+        <div style="display:flex;gap:10px;align-items:flex-start;padding:10px;border-left:3px solid ${priColor};background:var(--bg-surface);border-radius:0 6px 6px 0;margin-bottom:8px;">
+          <div style="flex-shrink:0;font-size:18px;">${a.type.includes('Fire') ? '🔥' : a.type.includes('Traffic') ? '🚗' : a.type.includes('Medical') ? '🚑' : '🆘'}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:12px;font-weight:700;color:${priColor};">${a.type}</div>
+            <div style="font-size:11px;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${a.location}</div>
+            <div style="font-size:11px;color:var(--text-muted);">${ago < 1 ? 'Just now' : ago + 'm ago'} ${a.mediaCount ? '• 📷 ' + a.mediaCount + ' media' : ''}</div>
+          </div>
+          <span class="badge ${a.status === 'New' ? 'badge-critical' : a.status === 'Dispatched' || a.status === 'En Route' ? 'badge-urgent' : 'badge-available'}" style="flex-shrink:0;font-size:10px;">${a.status}</span>
+        </div>`;
+  }).join('');
+};
+
+/** Render the public alerts mini-queue for the EMT module. */
+window.refreshEMTPublicQueue = function (container) {
+  const alerts = NECHIS_DATA.publicAlerts.filter(a => a.status !== 'Contained');
+  container.innerHTML = alerts.map(a => {
+    const ago = Math.round((Date.now() - new Date(a.timestamp)) / 60000);
+    return `
+        <div style="background:var(--bg-surface);border-radius:var(--radius-sm);padding:12px;border-left:3px solid ${a.priority === 'critical' ? 'var(--red)' : 'var(--amber)'};">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+            <div style="font-size:12px;font-weight:700;">${a.id} — ${a.type}</div>
+            <span class="badge ${a.status === 'New' ? 'badge-critical' : 'badge-urgent'}" style="font-size:10px;">${a.status}</span>
+          </div>
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">📍 ${a.location}</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">${a.description} ${a.mediaCount ? '· 📷 ' + a.mediaCount + ' photo/video' : ''} · ${ago < 1 ? 'Just now' : ago + 'm ago'}</div>
+          <div style="display:flex;gap:6px;">
+            <button onclick="showToast('Dispatching unit to ${a.id}','success');this.closest('div[style]').querySelector('.badge').textContent='Dispatched'" class="btn btn-danger" style="font-size:11px;padding:4px 10px;">🚑 Dispatch Unit</button>
+            <button onclick="showToast('Call connected to citizen for alert ${a.id}','info')" class="btn btn-ghost" style="font-size:11px;padding:4px 10px;">📞 Call Citizen</button>
+          </div>
+        </div>`;
+  }).join('') || '<div style="padding:20px;text-align:center;color:var(--text-muted);font-size:12px;">No active public alerts</div>';
+};
+

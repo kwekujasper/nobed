@@ -141,6 +141,18 @@ function renderEMT(container) {
             </div>
           </div>`).join('')}
       </div>
+
+      <!-- === CITIZEN ALERTS QUEUE === -->
+      <div class="card mt-20">
+        <div class="card-header">
+          <span class="card-title">🆘 Citizen Alerts — Incoming Public SOS & Scene Reports</span>
+          <span class="badge badge-critical" style="animation:pulse-red 1.5s infinite;" id="pub-alert-count">Loading...</span>
+          <button class="btn btn-ghost" style="font-size:11px;" onclick="window.location.hash='public'">→ Public Portal</button>
+        </div>
+        <div id="emt-public-queue" style="padding:12px;display:flex;flex-direction:column;gap:10px;">
+          <!-- filled by refreshEMTPublicQueue -->
+        </div>
+      </div>
   `;
 
   // Init map
@@ -148,7 +160,18 @@ function renderEMT(container) {
 
   // Animate ambulance positions
   setInterval(animateAmbulances, 5000);
+
+  // Populate citizen alerts queue
+  setTimeout(() => {
+    const el = document.getElementById('emt-public-queue');
+    const cnt = document.getElementById('pub-alert-count');
+    if (el && window.refreshEMTPublicQueue) {
+      refreshEMTPublicQueue(el);
+      if (cnt) cnt.textContent = (NDATA.publicAlerts || []).filter(a => a.status !== 'Contained').length + ' Active';
+    }
+  }, 60);
 }
+
 
 function initEMTMap() {
   const mapEl = document.getElementById('emt-map');
