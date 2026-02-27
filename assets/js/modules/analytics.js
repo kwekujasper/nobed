@@ -64,7 +64,7 @@ function renderAnalytics(container) {
       <div class="card amber-card">
         <div class="card-header"><span class="card-title">Predictive Congestion — Next 72h</span><span class="badge badge-urgent">AI Forecast</span></div>
         <div class="chart-container" style="height:200px;"><canvas id="chart-predict"></canvas></div>
-        <div style="font-size:12px;color:var(--amber);margin-top:8px;">⚠ KBU & KAT forecast to hit 95%+ occupancy by Thursday 18:00 — recommend pre-emptive surge measures</div>
+        <div style="font-size:12px;color:var(--amber);margin-top:8px;">⚠ KBTH & KATH forecast to hit 95%+ occupancy by Thursday 18:00 — recommend pre-emptive surge measures</div>
       </div>
 
       <!-- Ambulance Response Distribution -->
@@ -145,8 +145,8 @@ function renderAnalytics(container) {
       type: 'line',
       data: {
         labels: pred, datasets: [
-          { label: 'KBU Forecast', data: [82, 85, 87, 90, 91, 88, 90, 93, 96, 98, 100, 99, 100, 102], borderColor: 'var(--red)', tension: 0.4, fill: true, backgroundColor: 'rgba(255,59,59,0.07)', pointRadius: 3 },
-          { label: 'KAT Forecast', data: [72, 74, 76, 80, 78, 75, 78, 82, 88, 92, 95, 98, 99, 100], borderColor: 'var(--amber)', tension: 0.4, fill: false, pointRadius: 3 },
+          { label: 'KBTH Forecast', data: [82, 85, 87, 90, 91, 88, 90, 93, 96, 98, 100, 99, 100, 102], borderColor: 'var(--red)', tension: 0.4, fill: true, backgroundColor: 'rgba(255,59,59,0.07)', pointRadius: 3 },
+          { label: 'KATH Forecast', data: [72, 74, 76, 80, 78, 75, 78, 82, 88, 92, 95, 98, 99, 100], borderColor: 'var(--amber)', tension: 0.4, fill: false, pointRadius: 3 },
         ]
       },
       options: { ...chartOpts(), scales: { y: { ...chartOpts().scales.y, max: 110, ticks: { ...chartOpts().scales.y.ticks, callback: v => v + '%' } }, x: chartOpts().scales.x } }

@@ -12,7 +12,7 @@ function renderHECU(container) {
         <select class="form-select" style="width:240px;">
           ${NDATA.facilities.filter(f => ['Teaching', 'Regional', 'Military'].includes(f.level)).map(f => `<option>${f.name}</option>`).join('')}
         </select>
-        <button class="btn btn-danger" onclick="showToast('⚠ Internal Surge Activated — KBU','warning')">Activate Internal Surge</button>
+        <button class="btn btn-danger" onclick="showToast('⚠ Internal Surge Activated — KBTH','warning')">Activate Internal Surge</button>
       </div>
     </div>
 
@@ -35,7 +35,7 @@ function renderHECU(container) {
     <div class="grid-2 gap-16 mb-16">
       <!-- ED Flow Board -->
       <div class="card">
-        <div class="card-header"><span class="card-title">ED Flow Board — KBU</span><span class="badge badge-critical">40/40 Patients</span></div>
+        <div class="card-header"><span class="card-title">ED Flow Board — KBTH</span><span class="badge badge-critical">40/40 Patients</span></div>
         <div class="tab-bar" style="margin-bottom:14px;">
           <div class="tab-btn active">All Patients</div>
           <div class="tab-btn">Red (Immediate)</div>

@@ -41,13 +41,30 @@ function renderSettings(container) {
             <tbody>
               ${[
           { name: 'Dr. Kweku Mensah', role: 'National Command', facility: 'NECC HQ', region: 'National', login: '27 Feb 01:40', status: 'active' },
-          { name: 'Dr. Ama Asante', role: 'Regional Director', facility: 'GAR Health Directorate', region: 'Greater Accra', login: '27 Feb 00:05', status: 'active' },
-          { name: 'Nurse Abena Poku', role: 'Bed Manager / Nurse', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '27 Feb 00:18', status: 'active' },
-          { name: 'Dr. Kofi Darko', role: 'HECU Commander', facility: 'Komfo Anokye Teaching Hospital', region: 'Ashanti', login: '26 Feb 20:44', status: 'active' },
-          { name: 'Patrick Bonsu', role: 'EMT Dispatcher', facility: 'GNEMS Accra', region: 'Greater Accra', login: '27 Feb 00:30', status: 'active' },
-          { name: 'Dr. Yaa Boateng', role: 'Equipment Officer', facility: 'Ridge Hospital', region: 'Greater Accra', login: '26 Feb 08:55', status: 'active' },
-          { name: 'Dr. Efua Tetteh', role: 'Clinician', facility: 'Tema General Hospital', region: 'Greater Accra', login: '24 Feb 22:00', status: 'suspended' },
           { name: 'Samuel Acheampong', role: 'Analytics Officer', facility: 'GHS Headquarters', region: 'National', login: '27 Feb 01:00', status: 'active' },
+          { name: 'Dr. Ama Asante', role: 'Regional Director', facility: 'GAR Health Directorate', region: 'Greater Accra', login: '27 Feb 00:05', status: 'active' },
+          { name: 'Dr. Benard Antwi', role: 'HECU Commander', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 20:44', status: 'active' },
+          { name: 'Dr. Adwoa Acheampong', role: 'HECU Commander', facility: 'Komfo Anokye Teaching Hospital', region: 'Ashanti', login: '25 Feb 19:30', status: 'active' },
+          { name: 'Nurse Abena Poku', role: 'Nurse', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '27 Feb 00:18', status: 'active' },
+          { name: 'Nurse Bismark Nyamasekpor', role: 'Nurse', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 08:10', status: 'active' },
+          { name: 'Bismark Darko', role: 'Nurse', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 09:30', status: 'active' },
+          { name: 'Nurse Worlas', role: 'Nurse', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 07:45', status: 'active' },
+          { name: 'Nurse Osei', role: 'Nurse', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 06:50', status: 'active' },
+          { name: 'Nurse Felix', role: 'Nurse', facility: 'Komfo Anokye Teaching Hospital', region: 'Ashanti', login: '26 Feb 10:20', status: 'active' },
+          { name: 'Dr. Botsyoe', role: 'Clinician', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 08:00', status: 'active' },
+          { name: 'Dr. Belson', role: 'Clinician', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '26 Feb 09:00', status: 'active' },
+          { name: 'Dr. Elvis', role: 'Clinician', facility: 'Ridge Hospital', region: 'Greater Accra', login: '26 Feb 07:30', status: 'active' },
+          { name: 'Dr. Suzzy', role: 'Clinician', facility: 'Ridge Hospital', region: 'Greater Accra', login: '26 Feb 10:00', status: 'active' },
+          { name: 'Dr. Ohene', role: 'Clinician', facility: 'Tema General Hospital', region: 'Greater Accra', login: '26 Feb 09:15', status: 'active' },
+          { name: 'Dr. Gifty', role: 'Clinician', facility: 'Komfo Anokye Teaching Hospital', region: 'Ashanti', login: '26 Feb 12:00', status: 'active' },
+          { name: 'Dr. Salifu', role: 'Clinician', facility: 'Tamale Teaching Hospital', region: 'Northern', login: '26 Feb 08:45', status: 'active' },
+          { name: 'Dr. Yaa Boateng', role: 'Clinician', facility: 'Ridge Hospital', region: 'Greater Accra', login: '26 Feb 08:55', status: 'active' },
+          { name: 'Dr. Samuel Owusu', role: 'Clinician', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '25 Feb 21:00', status: 'active' },
+          { name: 'Patrick Bonsu', role: 'EMT Dispatcher', facility: 'GNEMS Accra', region: 'Greater Accra', login: '27 Feb 00:30', status: 'active' },
+          { name: 'Dispatch Bright', role: 'EMT Dispatcher', facility: 'GNEMS Accra', region: 'Greater Accra', login: '26 Feb 11:00', status: 'active' },
+          { name: 'Dr. Aboagye', role: 'Clinician', facility: 'Ridge Hospital', region: 'Greater Accra', login: '27 Feb 06:30', status: 'active' },
+          { name: 'Dr. Elinam', role: 'Clinician', facility: 'Ho Teaching Hospital', region: 'Volta', login: '27 Feb 07:15', status: 'active' },
+          { name: 'Ebenezer Osei-Bonsu', role: 'Equipment Officer', facility: 'Korle Bu Teaching Hospital', region: 'Greater Accra', login: '25 Feb 08:00', status: 'active' },
         ].map(u => `
                 <tr>
                   <td style="font-weight:600;">${u.name}</td>
@@ -284,9 +301,9 @@ function renderSettings(container) {
             <tbody>
               ${[
           { ts: '2026-02-27 01:40', user: 'Dr. Mensah', action: 'NHIS verification', entity: 'AA20250001G', ip: '196.1.48.22' },
-          { ts: '2026-02-27 01:30', user: 'Nurse Poku', action: 'MAR entry — Morphine', entity: 'P001 / KBU-ICU-3', ip: '196.1.48.25' },
+          { ts: '2026-02-27 01:30', user: 'Nurse Poku', action: 'MAR entry — Morphine', entity: 'P001 / KBTH-ICU-3', ip: '196.1.48.25' },
           { ts: '2026-02-27 01:20', user: 'Patrick Bonsu', action: 'Dispatched ambulance', entity: 'AMB-GA-12', ip: '41.93.17.6' },
-          { ts: '2026-02-27 00:58', user: 'Dr. Boateng', action: 'Equipment fault reported', entity: 'EQ-VENT-KBU-004', ip: '196.1.48.28' },
+          { ts: '2026-02-27 00:58', user: 'Dr. Boateng', action: 'Equipment fault reported', entity: 'EQ-VENT-KBTH-004', ip: '196.1.48.28' },
           { ts: '2026-02-27 00:48', user: 'Dr. Asante', action: 'Accepted referral', entity: 'REF-2024-002', ip: '41.71.20.5' },
           { ts: '2026-02-27 00:43', user: 'System', action: 'Auto-escalated referral', entity: 'REF-2024-004', ip: 'System' },
           { ts: '2026-02-27 00:30', user: 'Dr. Mensah', action: 'Activated surge mode', entity: 'National — GAR', ip: '196.1.48.22' },

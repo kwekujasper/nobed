@@ -1,11 +1,27 @@
 Default PINs
 Role	Name	PIN
 National Command	Dr. Kweku Mensah	1234
+Analytics Officer	Samuel Acheampong	2345
 Regional Director (GAR)	Dr. Ama Asante	3456
-HECU Commander (KBU)	Dr. Kofi Darko	5678
-Bed Manager (KBU ICU)	Nurse Abena Poku	7890
+Regional Director (ASH)	Dr. Yaw Frimpong	4567
+HECU Commander (KBTH)	Dr. Benard Antwi	5678
+HECU Commander (KATH)	Dr. Adwoa Acheampong	6789
+Nurse (KBTH ICU)	Nurse Abena Poku	7890
+Bed Manager (RID ED)	Dr. Kwame Tetteh	8901
+Nurse (KBTH ICU)	Nurse Bismark Nyamasekpor	1111
+Nurse (KBTH HDU)	Bismark Darko	2222
+Nurse (KBTH Ward)	Nurse Worlas	5555
+Nurse (KBTH ED)	Nurse Osei	6666
+Nurse (KATH ICU)	Nurse Felix	7777
 EMT Dispatcher (GAR)	Patrick Bonsu	9012
+EMT Dispatcher (ASH)	Efua Sarfo	0123
+EMT Dispatcher (GAR)	Dispatch Bright	8888
+Clinician (KBTH ICU)	Dr. Botsyoe	3333
+Clinician (KBTH ED)	Dr. Belson	4444
+Clinician (RID ED)	Dr. Elvis	5544
+Clinician (RID Maternity)	Dr. Suzzy	6655
+Clinician (TEM ICU)	Dr. Ohene	9900
+Clinician (KATH Maternity)	Dr. Gifty	1122
+Clinician (TTH ED)	Dr. Salifu	3344
+Equipment Officer (KBTH)	Ebenezer Osei-Bonsu	3691
 Public	Public Access	0000
-
-
-

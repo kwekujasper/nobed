@@ -3,7 +3,7 @@
 // ================================================================
 function renderBeds(container) {
     const facilities = NDATA.facilities;
-    let selectedFacility = 'KBU';
+    let selectedFacility = 'KBTH';
 
     function render() {
         const fac = facilities.find(f => f.id === selectedFacility);
@@ -137,7 +137,7 @@ function renderBeds(container) {
     }
 
     window.triggerSelectChange = function () {
-        selectedFacility = document.getElementById('facility-select')?.value || 'KBU';
+        selectedFacility = document.getElementById('facility-select')?.value || 'KBTH';
         render();
     };
 

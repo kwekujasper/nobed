@@ -176,7 +176,7 @@ function renderSurge(container) {
                         </div>
                     </div>
                 `).join('')}
-                <button class="btn btn-primary w-full mt-12" onclick="showToast('Distribution sent to receiving hospitals', 'success')">Transmit Triage Roster to KBU & Ridge</button>
+                <button class="btn btn-primary w-full mt-12" onclick="showToast('Distribution sent to receiving hospitals', 'success')">Transmit Triage Roster to KBTH & Ridge</button>
             </div>
          </div>
          

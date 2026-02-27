@@ -45,7 +45,7 @@ function renderTelemedicine(container) {
             <div class="tele-video-placeholder">
               <div style="font-size:48px;margin-bottom:12px;">👨‍⚕️</div>
               <div style="font-size:14px;font-weight:600;color:var(--text-secondary);">${activeCall.specialist}</div>
-              <div style="font-size:12px;color:var(--text-muted);">${activeCall.specialty} — KBU</div>
+              <div style="font-size:12px;color:var(--text-muted);">${activeCall.specialty} — KBTH</div>
               <div style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--red-dim);border-radius:20px;border:1px solid rgba(255,59,59,0.3);">
                 <span style="width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulseDot 1s ease infinite;display:inline-block;"></span>
                 <span style="font-size:12px;color:var(--red);font-weight:600;">LIVE CONSULTATION</span>
@@ -90,7 +90,7 @@ function renderTelemedicine(container) {
             <div style="display:flex;flex-direction:column;gap:8px;max-height:200px;overflow-y:auto;" id="tele-chat">
               <div style="font-size:11px;"><span style="color:var(--accent);font-weight:600;">Dr. Tetteh:</span> <span>Please send CT head images — can't advise without imaging</span></div>
               <div style="font-size:11px;"><span style="color:var(--amber);font-weight:600;">Dr. Boateng:</span> <span>CT unavailable here — blood pressure still dropping</span></div>
-              <div style="font-size:11px;"><span style="color:var(--accent);font-weight:600;">Dr. Tetteh:</span> <span>Prepare for immediate transfer. Activate neuro team at KBU — I'll be in theatre.</span></div>
+              <div style="font-size:11px;"><span style="color:var(--accent);font-weight:600;">Dr. Tetteh:</span> <span>Prepare for immediate transfer. Activate neuro team at KBTH — I'll be in theatre.</span></div>
             </div>
             <div style="display:flex;gap:8px;margin-top:10px;">
               <input type="text" class="form-input" placeholder="Type message..." style="flex:1;font-size:12px;padding:8px;" id="chat-input"/>

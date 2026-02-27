@@ -178,10 +178,10 @@ function renderDashboard(container) {
       <div class="card">
         <div class="card-header"><span class="card-title">Critical Infrastructure</span></div>
         ${[
-      { label: 'KBU Oxygen', val: 4.2, unit: 'bar', ok: true },
-      { label: 'KBU Generator', val: 72, unit: '% fuel', ok: true },
-      { label: 'KAT Oxygen', val: 3.1, unit: 'bar', ok: true },
-      { label: 'TAM Oxygen', val: 1.8, unit: 'bar', ok: false },
+      { label: 'KBTH Oxygen', val: 4.2, unit: 'bar', ok: true },
+      { label: 'KBTH Generator', val: 72, unit: '% fuel', ok: true },
+      { label: 'KATH Oxygen', val: 3.1, unit: 'bar', ok: true },
+      { label: 'TTH Oxygen', val: 1.8, unit: 'bar', ok: false },
       { label: 'RID Generator', val: 38, unit: '% fuel', ok: false },
     ].map(item => `
           <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;">

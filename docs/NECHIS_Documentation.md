@@ -180,11 +180,11 @@ Public (public interface only)
 | National Command | All 10 facilities | All regions | All fleet | 1234 |
 | Analytics Officer | All | None | None | 2345 |
 | Regional Director (GAR) | GAR facilities only | GAR referrals | GAR fleet | 3456 |
-| HECU Commander (KBU) | KBU only | KBU referrals | Region fleet | 5678 |
-| Bed Manager (KBU ICU) | KBU ICU unit only | KBU referrals | None | 7890 |
+| HECU Commander (KBTH) | KBTH only | KBTH referrals | Region fleet | 5678 |
+| Bed Manager (KBTH ICU) | KBTH ICU unit only | KBTH referrals | None | 7890 |
 | EMT Dispatcher (GAR) | None | GAR referrals | GAR fleet | 9012 |
 | Clinician (RID ED) | RID facility | RID referrals | None | 1357 |
-| Equipment Officer (KBU) | KBU equipment | None | None | 3691 |
+| Equipment Officer (KBTH) | KBTH equipment | None | None | 3691 |
 | Public | All (read-only) | None | None | 0000 |
 
 ### Permission Matrix (Action-Level)
@@ -434,8 +434,8 @@ All SMS messages are logged to `sms_log` table with Hubtel message ID, status, a
 
 | Term | Meaning |
 |------|---------|
-| **KBU** | Korle Bu Teaching Hospital (Greater Accra) |
-| **KAT** | Komfo Anokye Teaching Hospital (Ashanti) |
+| **KBTH** | Korle Bu Teaching Hospital (Greater Accra) |
+| **KATH** | Komfo Anokye Teaching Hospital (Ashanti) |
 | **GAR** | Greater Accra Region |
 | **ASH** | Ashanti Region |
 | **GNEMS** | Ghana National Emergency Medical Service |

@@ -328,14 +328,14 @@ INSERT INTO regions (id, name, zone) VALUES
 -- SEED: Facilities
 -- ----------------------------------------------------------------
 INSERT INTO facilities (id, name, region_id, type, lat, lng, icu_total, icu_avail, ed_capacity, beds_total) VALUES
-('KBU', 'Korle Bu Teaching Hospital',     'GAR', 'teaching', 5.5351, -0.2278, 32, 4,  40, 1800),
+('KBTH', 'Korle Bu Teaching Hospital',     'GAR', 'teaching', 5.5351, -0.2278, 32, 4,  40, 1800),
 ('RID', 'Ridge Hospital',                  'GAR', 'regional', 5.5600, -0.2027, 16, 6,  30, 350),
 ('MIL', '37 Military Hospital',            'GAR', 'regional', 5.5714, -0.1869, 12, 5,  25, 280),
 ('LAA', 'La General Hospital',             'GAR', 'district', 5.5802, -0.1443, 4,  0,  12, 120),
-('KAT', 'Komfo Anokye Teaching Hospital',  'ASH', 'teaching', 6.6930, -1.6136, 24, 8,  35, 1200),
-('CCM', 'Cape Coast Teaching Hospital',    'CEN', 'teaching', 5.1000, -1.2674, 12, 7,  20, 400),
-('TAM', 'Tamale Teaching Hospital',        'NOR', 'teaching', 9.4015, -0.8414, 14, 3,  22, 450),
-('HOS', 'Ho Teaching Hospital',            'VOR', 'teaching', 6.6013, 0.4713,  10, 6,  18, 300),
+('KATH', 'Komfo Anokye Teaching Hospital',  'ASH', 'teaching', 6.6930, -1.6136, 24, 8,  35, 1200),
+('CCTH', 'Cape Coast Teaching Hospital',    'CEN', 'teaching', 5.1000, -1.2674, 12, 7,  20, 400),
+('TTH', 'Tamale Teaching Hospital',        'NOR', 'teaching', 9.4015, -0.8414, 14, 3,  22, 450),
+('HTH', 'Ho Teaching Hospital',            'VOR', 'teaching', 6.6013, 0.4713,  10, 6,  18, 300),
 ('WEG', 'Western Regional Hospital',       'WES', 'regional', 4.9016, -1.7743, 8,  2,  15, 200),
 ('TEM', 'Tema General Hospital',           'GAR', 'regional', 5.6698, -0.0166, 10, 1,  30, 320);
 
