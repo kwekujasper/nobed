@@ -84,7 +84,8 @@ function renderLogin() {
         </div>
 
         <div style="margin-top:24px;text-align:center;font-size:10px;color:var(--text-muted);">
-          NECHIS v2.0 · GHS Secure · Feb 2026
+          NECHIS v2.0 · GHS Secure · Feb 2026<br>
+          &copy; 2023-2026 by EG Mobile Ghana
         </div>
       </div>
     </div>`;
