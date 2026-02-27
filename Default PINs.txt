@@ -1,0 +1,11 @@
+Default PINs
+Role	Name	PIN
+National Command	Dr. Kweku Mensah	1234
+Regional Director (GAR)	Dr. Ama Asante	3456
+HECU Commander (KBU)	Dr. Kofi Darko	5678
+Bed Manager (KBU ICU)	Nurse Abena Poku	7890
+EMT Dispatcher (GAR)	Patrick Bonsu	9012
+Public	Public Access	0000
+
+
+
